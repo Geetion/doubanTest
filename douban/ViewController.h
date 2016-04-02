@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking.h>
+#import "BookItems.h"
+#import "MusicItems.h"
+#import "MovieItems.h"
+#import "TypeButton.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<TypeButtonDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 
 
