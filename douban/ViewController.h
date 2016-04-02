@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
 
 
 @end
