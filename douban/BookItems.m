@@ -12,7 +12,7 @@
 
 -(void)initWithObject:(NSDictionary*)item{
     
-    self.author = item[@"author"];
+    self.author = [Utils convertArrayToString:item[@"author"]];
     self.title = item[@"title"];
     self.image = item[@"image"];
     self.url = item[@"url"];

@@ -57,9 +57,11 @@ UIViewController *mContext;
 #pragma delegate
 -(void)onButtonClick:(UIButton*)sender{
     
+    [Utils delaySelectorWithObject:sender WithInterval:1];
+    
     [Animation tapAnimation:self withContext:mContext];
     
-    [self.delegate onButtonClickListner:(int)sender.tag];
+    [self.delegate onButtonClickListner:sender];
 }
 
 @end

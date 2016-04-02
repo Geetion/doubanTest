@@ -19,6 +19,10 @@
     NSString *mURL;
     
     NSDictionary *typeWithTag;
+    
+    TypeButton *bookSearchbt;
+    TypeButton *movieSearchbt;
+    TypeButton *musicSearchbt;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;

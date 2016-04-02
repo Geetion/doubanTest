@@ -11,4 +11,6 @@
 
 @interface Animation : NSObject
 +(void)tapAnimation:(UIView*)object withContext:(UIViewController*)context;
++(void)objectShowAnimation:(UIView*)object;
++(void)inputErrorAnimation:(UIView*)object;
 @end

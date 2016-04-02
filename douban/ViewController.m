@@ -20,19 +20,25 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [Animation objectShowAnimation:musicSearchbt];
+    [Animation objectShowAnimation:movieSearchbt];
+    [Animation objectShowAnimation:bookSearchbt];
+}
+
 -(void)initSearchButton{
     
      mURL = @"https://api.douban.com/v2/";
     
     CGRect bookFrame = CGRectMake(200, 200, 50, 50);
-    TypeButton *bookSearchbt = [[TypeButton alloc] initWithFrame:bookFrame];
+    bookSearchbt = [[TypeButton alloc] initWithFrame:bookFrame];
     bookSearchbt.delegate = self;
     [bookSearchbt setButtonName:@"图书" withColor:[UIColor greenColor]
                         withTag:0 andContext:self];
     [self.view addSubview:bookSearchbt];
     
-    CGRect movieFrame = CGRectMake(100, 200, 50, 50);
-    TypeButton *movieSearchbt = [[TypeButton alloc] initWithFrame:movieFrame];
+    CGRect movieFrame = CGRectMake(100, 200, 100, 100);
+    movieSearchbt = [[TypeButton alloc] initWithFrame:movieFrame];
     movieSearchbt.delegate = self;
     [movieSearchbt setButtonName:@"电影" withColor:[UIColor greenColor]
                          withTag:1 andContext:self];
@@ -40,7 +46,7 @@
     [self.view addSubview:movieSearchbt];
     
     CGRect musicFrame = CGRectMake(100, 100, 50, 50);
-    TypeButton *musicSearchbt = [[TypeButton alloc] initWithFrame:musicFrame];
+    musicSearchbt = [[TypeButton alloc] initWithFrame:musicFrame];
     musicSearchbt.delegate = self;
     [musicSearchbt setButtonName:@"音乐" withColor:[UIColor greenColor]
                          withTag:2 andContext:self];
@@ -49,13 +55,15 @@
 }
 
 
--(void)onButtonClickListner:(int)viewTag{
+-(void)onButtonClickListner:(UIButton*)sender{
+    
+    [Animation inputErrorAnimation:self.searchField];
     
     NSString *keyword = [self.searchField text];
     
     NSString *type;
     
-    switch (viewTag) {
+    switch (sender.tag) {
         case 0:{
             type = @"book";
             break;

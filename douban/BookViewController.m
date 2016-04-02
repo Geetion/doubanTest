@@ -93,7 +93,9 @@
     
     BookItems *item =  dataList[indexPath.item];
     UILabel *title = [cell viewWithTag:1];
+    UILabel *author = [cell viewWithTag:2];
     title.text = item.title;
+    author.text = item.author;
     return cell;
 }
 

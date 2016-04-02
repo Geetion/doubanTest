@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Animation.h"
+#import "Utils.h"
 
 @protocol TypeButtonDelegate <NSObject>
 
--(void)onButtonClickListner:(int)viewTag;
+-(void)onButtonClickListner:(UIButton*)sender;
 
 @end
 

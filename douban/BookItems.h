@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Items.h"
+#import "Utils.h"
 
 @interface BookItems : Items
 
