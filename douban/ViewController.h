@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AFNetworking.h>
+#import "TypeButton.h"
+#import "Animation.h"
 #import "BookItems.h"
 #import "MusicItems.h"
 #import "MovieItems.h"
-#import "TypeButton.h"
+#import "BookViewController.h"
 
-@interface ViewController : UIViewController<TypeButtonDelegate>
+@interface ViewController : UIViewController<TypeButtonDelegate>{
+    
+    NSString *mURL;
+    
+    NSDictionary *typeWithTag;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 

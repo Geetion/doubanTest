@@ -9,5 +9,12 @@
 #import "MovieItems.h"
 
 @implementation MovieItems
-
+-(void)initWithObject:(NSDictionary*)item{
+    
+    self.director = item[@"director"];
+    self.title = item[@"title"];
+    self.image = item[@"images"];
+    self.genres = item[@"genres"];
+    self.year = item[@"year"];
+}
 @end

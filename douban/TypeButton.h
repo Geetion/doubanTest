@@ -19,5 +19,7 @@
 
 @property id<TypeButtonDelegate> delegate;
 
--(void)setButton:(NSString *)typeNameText withColor:(UIColor*)color;
+-(void)setButtonName:(NSString *)name withColor:(UIColor*)color withTag:(int)btTag
+          andContext:(UIViewController*)context;
+
 @end

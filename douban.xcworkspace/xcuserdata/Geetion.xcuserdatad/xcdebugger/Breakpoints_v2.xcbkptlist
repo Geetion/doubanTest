@@ -28,11 +28,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "douban/TypeButton.m"
-            timestampString = "481290581.22841"
+            timestampString = "481296209.446129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-onButtonClick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -44,13 +44,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "douban/ViewController.m"
-            timestampString = "481290947.925334"
+            timestampString = "481304203.662394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-onButtonClickListner:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "douban/MovieItems.h"
+            timestampString = "481305664.055972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "rating"
+            landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

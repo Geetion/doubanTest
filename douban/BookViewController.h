@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BookItems.h"
+#import "MovieItems.h"
+#import "MusicItems.h"
+#import <AFNetworking.h>
 
-@interface BookViewController : UITableViewController
+@interface BookViewController : UITableViewController{
+    NSMutableArray *dataList;
+    NSDictionary *typeDic;
+}
+@property (nullable, nonatomic, retain) NSString *url;
+@property (nullable, nonatomic, retain) NSString *searchType;
+@property (nullable, nonatomic, retain) NSString *keyword;
 
 @end

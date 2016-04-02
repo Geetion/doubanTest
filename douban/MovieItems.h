@@ -10,5 +10,10 @@
 #import "Items.h"
 
 @interface MovieItems : Items
-
+@property (nullable, nonatomic, retain) NSString *director;
+@property (nullable, nonatomic, retain) NSString *year;
+@property (nullable, nonatomic, retain) NSString *image;
+@property (nullable, nonatomic, retain) NSArray *genres;
+@property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSString *rating;
 @end

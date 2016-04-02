@@ -13,99 +13,77 @@
 
 @implementation ViewController
 
-NSString *mURL = @"https://api.douban.com/v2/";
-
-NSArray *mData;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CGRect frame = CGRectMake(200, 200, 50, 50);
-    TypeButton *typeButton = [[TypeButton alloc] initWithFrame:frame];
-    UIButton
-    [typeButton setButton:@"123" withColor:[UIColor blueColor]];
-    
-    [self.view addSubview:typeButton];
+    [self initSearchButton];
     
 }
 
-- (IBAction)searchBtOnClick:(UIButton *)sender {
+-(void)initSearchButton{
+    
+     mURL = @"https://api.douban.com/v2/";
+    
+    CGRect bookFrame = CGRectMake(200, 200, 50, 50);
+    TypeButton *bookSearchbt = [[TypeButton alloc] initWithFrame:bookFrame];
+    bookSearchbt.delegate = self;
+    [bookSearchbt setButtonName:@"图书" withColor:[UIColor greenColor]
+                        withTag:0 andContext:self];
+    [self.view addSubview:bookSearchbt];
+    
+    CGRect movieFrame = CGRectMake(100, 200, 50, 50);
+    TypeButton *movieSearchbt = [[TypeButton alloc] initWithFrame:movieFrame];
+    movieSearchbt.delegate = self;
+    [movieSearchbt setButtonName:@"电影" withColor:[UIColor greenColor]
+                         withTag:1 andContext:self];
+    
+    [self.view addSubview:movieSearchbt];
+    
+    CGRect musicFrame = CGRectMake(100, 100, 50, 50);
+    TypeButton *musicSearchbt = [[TypeButton alloc] initWithFrame:musicFrame];
+    musicSearchbt.delegate = self;
+    [musicSearchbt setButtonName:@"音乐" withColor:[UIColor greenColor]
+                         withTag:2 andContext:self];
+    
+    [self.view addSubview:musicSearchbt];
+}
+
+
+-(void)onButtonClickListner:(int)viewTag{
     
     NSString *keyword = [self.searchField text];
     
-    if (keyword.length != 0) {
-        
+    NSString *type;
+    
+    switch (viewTag) {
+        case 0:{
+            type = @"book";
+            break;
+        }
+        case 1:
+            type = @"movie";
+            break;
+        case 2:{
+            type = @"music";
+            break;
+        }
+        default:break;
     }
     
-}
-
-/*
- 获取从服务器传回的数据
- @param:keyword 传入关键字
- */
--(void)getBookSearchResult:(NSString*)keyword andSearchType:(NSString*)type{
-    
-//    生成请求连接
+    //    生成请求连接
     NSString *getUrl = [mURL stringByAppendingString:type];
     getUrl = [getUrl stringByAppendingString:@"/search?q="];
     getUrl = [getUrl stringByAppendingString:keyword];
     getUrl= [getUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-//    创建网络请求
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     
-    [session GET:getUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSArray *result = responseObject[type];
-        
-        for (int i=0; i<result.count; i++) {
-            
-            Items *item = [self getItemType:type];
-            [item initWithObject:result[i]];
-            
-            [mData arrayByAddingObject:item];
-        }
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
-}
-
-/*获取Item的类型并返回正确Model
- @param:type 类型关键字
- */
--(Items*)getItemType:(NSString*)type{
-    
-    Items *item;
-    
-    if ([type isEqualToString:@"music"]) {
-        item = [MusicItems alloc];
-        
-    }else if([type isEqualToString:@"movie"]){
-        item = [MovieItems alloc];
-        
-    }else if([type isEqualToString:@"book"]){
-        item = [BookItems alloc];
-    }
-    
-    return item;
-}
-
--(void)onButtonClickListner:(int)viewTag{
-    switch (viewTag) {
-        case 0:
-            
-            break;
-        case 1:
-            break;
-        case 2:{
-            break;
-        }
-        case 3:{
-            
-        }
-        default:break;
+    if (keyword.length != 0) {
+        UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        BookViewController *viewcontroller = [myStoryBoard instantiateViewControllerWithIdentifier:@"book"];
+        viewcontroller.url = getUrl;
+        viewcontroller.keyword = keyword;
+        viewcontroller.searchType = type;
+        [self.navigationController pushViewController:viewcontroller animated:true];
     }
 }
 

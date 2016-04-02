@@ -10,9 +10,11 @@
 
 @implementation Animation
 
-+(void)tapAnimation:(NSObject*)object{
++(void)tapAnimation:(UIView*)object withContext:(UIViewController*)context{
+    
     
     [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:2];
     [UIView commitAnimations];
 }
 

@@ -9,5 +9,8 @@
 #import "MusicItems.h"
 
 @implementation MusicItems
-
+-(void)initWithObject:(NSDictionary*)item{
+    
+    self.title = item[@"title"];
+}
 @end

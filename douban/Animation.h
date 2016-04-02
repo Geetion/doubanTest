@@ -10,5 +10,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Animation : NSObject
-+(void)tapAnimation:(NSObject*)object;
++(void)tapAnimation:(UIView*)object withContext:(UIViewController*)context;
 @end

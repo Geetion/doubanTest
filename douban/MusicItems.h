@@ -10,5 +10,9 @@
 #import "Items.h"
 
 @interface MusicItems : Items
-
+@property (nullable, nonatomic, retain) NSString *director;
+@property (nullable, nonatomic, retain) NSString *year;
+@property (nullable, nonatomic, retain) NSString *image;
+@property (nullable, nonatomic, retain) NSArray *genres;
+@property (nullable, nonatomic, retain) NSString *title;
 @end

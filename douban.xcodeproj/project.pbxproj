@@ -23,6 +23,8 @@
 		C0925CAA1CAFE2F3002CBB80 /* MovieItems.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925CA91CAFE2F3002CBB80 /* MovieItems.m */; };
 		C0925CAD1CAFE304002CBB80 /* MusicItems.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925CAC1CAFE304002CBB80 /* MusicItems.m */; };
 		C0925CB31CAFE535002CBB80 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925CB21CAFE535002CBB80 /* Items.m */; };
+		C0925CBF1CB001E1002CBB80 /* BookItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925CBD1CB001E1002CBB80 /* BookItemCell.m */; };
+		C0925CC01CB001E1002CBB80 /* BookItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0925CBE1CB001E1002CBB80 /* BookItemCell.xib */; };
 		C09D67E63B8F8FCF8B0871C2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5560F1DB250D7ACF69F81A21 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,9 @@
 		C0925CAC1CAFE304002CBB80 /* MusicItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicItems.m; sourceTree = "<group>"; };
 		C0925CB11CAFE535002CBB80 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.h; sourceTree = "<group>"; };
 		C0925CB21CAFE535002CBB80 /* Items.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Items.m; sourceTree = "<group>"; };
+		C0925CBC1CB001E1002CBB80 /* BookItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemCell.h; sourceTree = "<group>"; };
+		C0925CBD1CB001E1002CBB80 /* BookItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemCell.m; sourceTree = "<group>"; };
+		C0925CBE1CB001E1002CBB80 /* BookItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookItemCell.xib; sourceTree = "<group>"; };
 		C62305DD625900EB245E122B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +197,7 @@
 		C0925CAE1CAFE30D002CBB80 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C0925CB41CB000BC002CBB80 /* UITableViewCell */,
 				C0925C2B1CAFA6E9002CBB80 /* ViewController.h */,
 				C0925C2C1CAFA6E9002CBB80 /* ViewController.m */,
 				C0925C5B1CAFB94F002CBB80 /* BookViewController.h */,
@@ -223,6 +229,16 @@
 				C0925CA51CAFDE5E002CBB80 /* Animation.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		C0925CB41CB000BC002CBB80 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0925CBC1CB001E1002CBB80 /* BookItemCell.h */,
+				C0925CBD1CB001E1002CBB80 /* BookItemCell.m */,
+				C0925CBE1CB001E1002CBB80 /* BookItemCell.xib */,
+			);
+			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		CBB5C7D9D45C78AC10C1369E /* Pods */ = {
@@ -344,6 +360,7 @@
 				C0925C381CAFA6E9002CBB80 /* LaunchScreen.storyboard in Resources */,
 				C0925C351CAFA6E9002CBB80 /* Assets.xcassets in Resources */,
 				C0925C301CAFA6E9002CBB80 /* Main.storyboard in Resources */,
+				C0925CC01CB001E1002CBB80 /* BookItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +436,7 @@
 				C0925CB31CAFE535002CBB80 /* Items.m in Sources */,
 				C0925C5D1CAFB94F002CBB80 /* BookViewController.m in Sources */,
 				C0925C331CAFA6E9002CBB80 /* douban.xcdatamodeld in Sources */,
+				C0925CBF1CB001E1002CBB80 /* BookItemCell.m in Sources */,
 				C0925C2D1CAFA6E9002CBB80 /* ViewController.m in Sources */,
 				C0925C2A1CAFA6E9002CBB80 /* AppDelegate.m in Sources */,
 				C0925C271CAFA6E9002CBB80 /* main.m in Sources */,
