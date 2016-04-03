@@ -9,6 +9,7 @@
 #import "Utils.h"
 
 @implementation Utils
+
 //声明一个bool值变量标示点击状态
 Boolean isShow = TRUE;
 
@@ -55,6 +56,27 @@ UIView *mObject;
     mObject.userInteractionEnabled = true;
     
     
+}
+
++(void)syncNsurlConnectionWithUrl:(NSString*)url onSuccess:(void(^)(NSDictionary * _Nullable data))successBlock
+                          onError:(void(^)(NSError * _Nullable error))errorBlock{
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *nsurl = [[NSURL alloc] initWithString:url];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:nsurl];
+    
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error != NULL) {
+            errorBlock(error);
+        }else{
+            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            successBlock(result);
+        }
+        
+    }];
+    
+    [task resume];
 }
 @end
 

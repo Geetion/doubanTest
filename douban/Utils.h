@@ -15,4 +15,7 @@
 
 +(void)delaySelectorWithObject:(UIView*)object WithInterval:(int)time;
 
++(void)syncNsurlConnectionWithUrl:(NSString*)url onSuccess:(void(^)(NSDictionary * _Nullable data))successBlock
+                          onError:(void(^)(NSError *error))errorBlock;
+
 @end

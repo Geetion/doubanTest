@@ -19,6 +19,15 @@
     [super viewDidLoad];
     typeDic = @{@"book":@"books",@"movie":@"subjects",@"music":@"musics"};
     dataList = [[NSMutableArray alloc] init];
+    
+    CGRect dismissFrame = CGRectMake(200, 200, 50, 50);
+    TypeButton *dismiss = [[TypeButton alloc] initWithFrame:dismissFrame];
+    dismiss.buttonColor = [UIColor redColor];
+    dismiss.delegate = self;
+    [dismiss setButtonName:@"返回" withTag:1 andContext:self];
+    
+    [self.view addSubview:dismiss];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -33,12 +42,12 @@
 -(void)getBookSearchResult{
     
     //    创建网络请求
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     
-    [session GET:_url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [Utils syncNsurlConnectionWithUrl:_url onSuccess:^(NSDictionary *data) {
         
         NSString *resultKeyword = typeDic[_searchType];
-        NSArray *result = responseObject[resultKeyword];
+        
+        NSArray *result = [data valueForKey:resultKeyword];
         
         for (int i=0; i<result.count; i++) {
             
@@ -52,8 +61,7 @@
         NSLog(@"%lu",(unsigned long)result.count);
         
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
+    } onError:^(NSError *error) {
     }];
 }
 
@@ -76,6 +84,11 @@
     
     return item;
 }
+
+-(void)onButtonClickListener:(UIView*)sender withTitle:(UIButton*)title{
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

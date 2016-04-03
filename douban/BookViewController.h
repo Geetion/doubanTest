@@ -10,9 +10,9 @@
 #import "BookItems.h"
 #import "MovieItems.h"
 #import "MusicItems.h"
-#import <AFNetworking.h>
+#import "TypeButton.h"
 
-@interface BookViewController : UITableViewController{
+@interface BookViewController : UITableViewController<TypeButtonDelegate>{
     NSMutableArray *dataList;
     NSDictionary *typeDic;
 }

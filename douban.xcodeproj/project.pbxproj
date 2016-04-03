@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C07474101CB0263F007098F1 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C074740F1CB0263F007098F1 /* Utils.m */; };
+		C07474131CB0B960007098F1 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C07474121CB0B960007098F1 /* MovieViewController.m */; };
 		C0925C271CAFA6E9002CBB80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925C261CAFA6E9002CBB80 /* main.m */; };
 		C0925C2A1CAFA6E9002CBB80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925C291CAFA6E9002CBB80 /* AppDelegate.m */; };
 		C0925C2D1CAFA6E9002CBB80 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925C2C1CAFA6E9002CBB80 /* ViewController.m */; };
@@ -26,7 +27,6 @@
 		C0925CB31CAFE535002CBB80 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925CB21CAFE535002CBB80 /* Items.m */; };
 		C0925CBF1CB001E1002CBB80 /* BookItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925CBD1CB001E1002CBB80 /* BookItemCell.m */; };
 		C0925CC01CB001E1002CBB80 /* BookItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0925CBE1CB001E1002CBB80 /* BookItemCell.xib */; };
-		C09D67E63B8F8FCF8B0871C2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5560F1DB250D7ACF69F81A21 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5560F1DB250D7ACF69F81A21 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FFD27CA5ACDD4351E444986 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C074740E1CB0263F007098F1 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		C074740F1CB0263F007098F1 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		C07474111CB0B960007098F1 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		C07474121CB0B960007098F1 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		C0925C221CAFA6E9002CBB80 /* douban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0925C261CAFA6E9002CBB80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0925C281CAFA6E9002CBB80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 		C0925CBC1CB001E1002CBB80 /* BookItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemCell.h; sourceTree = "<group>"; };
 		C0925CBD1CB001E1002CBB80 /* BookItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemCell.m; sourceTree = "<group>"; };
 		C0925CBE1CB001E1002CBB80 /* BookItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookItemCell.xib; sourceTree = "<group>"; };
-		C62305DD625900EB245E122B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C09D67E63B8F8FCF8B0871C2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +115,6 @@
 		39E1526533DBE7B7DAE2BD86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5560F1DB250D7ACF69F81A21 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +126,6 @@
 				C0925C411CAFA6EA002CBB80 /* doubanTests */,
 				C0925C4C1CAFA6EA002CBB80 /* doubanUITests */,
 				C0925C231CAFA6E9002CBB80 /* Products */,
-				CBB5C7D9D45C78AC10C1369E /* Pods */,
 				39E1526533DBE7B7DAE2BD86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -205,6 +201,8 @@
 				C0925C2C1CAFA6E9002CBB80 /* ViewController.m */,
 				C0925C5B1CAFB94F002CBB80 /* BookViewController.h */,
 				C0925C5C1CAFB94F002CBB80 /* BookViewController.m */,
+				C07474111CB0B960007098F1 /* MovieViewController.h */,
+				C07474121CB0B960007098F1 /* MovieViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -246,15 +244,6 @@
 			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
-		CBB5C7D9D45C78AC10C1369E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8FFD27CA5ACDD4351E444986 /* Pods.debug.xcconfig */,
-				C62305DD625900EB245E122B /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,12 +251,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0925C521CAFA6EA002CBB80 /* Build configuration list for PBXNativeTarget "douban" */;
 			buildPhases = (
-				4197C56B35908DC9F47E98A3 /* Check Pods Manifest.lock */,
 				C0925C1E1CAFA6E9002CBB80 /* Sources */,
 				C0925C1F1CAFA6E9002CBB80 /* Frameworks */,
 				C0925C201CAFA6E9002CBB80 /* Resources */,
-				49419E4AED5D604B5D1C104E /* Embed Pods Frameworks */,
-				B9CB40329773C4CA5F15063A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -385,54 +371,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4197C56B35908DC9F47E98A3 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		49419E4AED5D604B5D1C104E /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9CB40329773C4CA5F15063A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C0925C1E1CAFA6E9002CBB80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -441,6 +379,7 @@
 				C0925CB31CAFE535002CBB80 /* Items.m in Sources */,
 				C0925C5D1CAFB94F002CBB80 /* BookViewController.m in Sources */,
 				C0925C331CAFA6E9002CBB80 /* douban.xcdatamodeld in Sources */,
+				C07474131CB0B960007098F1 /* MovieViewController.m in Sources */,
 				C07474101CB0263F007098F1 /* Utils.m in Sources */,
 				C0925CBF1CB001E1002CBB80 /* BookItemCell.m in Sources */,
 				C0925C2D1CAFA6E9002CBB80 /* ViewController.m in Sources */,
@@ -591,7 +530,6 @@
 		};
 		C0925C531CAFA6EA002CBB80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FFD27CA5ACDD4351E444986 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -606,7 +544,6 @@
 		};
 		C0925C541CAFA6EA002CBB80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C62305DD625900EB245E122B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

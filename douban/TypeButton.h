@@ -12,15 +12,17 @@
 
 @protocol TypeButtonDelegate <NSObject>
 
--(void)onButtonClickListner:(UIButton*)sender;
+-(void)onButtonClickListener:(UIView*)sender withTitle:(UIButton*)title;
 
 @end
 
 @interface TypeButton : UIView
 
+@property (nonatomic, retain) UIColor *buttonColor;
+
 @property id<TypeButtonDelegate> delegate;
 
--(void)setButtonName:(NSString *)name withColor:(UIColor*)color withTag:(int)btTag
+-(void)setButtonName:(NSString *)name withTag:(int)btTag
           andContext:(UIViewController*)context;
 
 @end

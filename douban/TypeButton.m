@@ -41,7 +41,7 @@ UIViewController *mContext;
 }
 
 //设置按钮名称及tag，颜色
--(void)setButtonName:(NSString *)name withColor:(UIColor*)color withTag:(int)btTag
+-(void)setButtonName:(NSString *)name withTag:(int)btTag
           andContext:(UIViewController*)context{
     
     mContext = context;
@@ -50,18 +50,19 @@ UIViewController *mContext;
     
     button.tag = btTag;
     
-    self.backgroundColor = color;
+    
+    self.backgroundColor = _buttonColor;
 }
 
 
 #pragma delegate
--(void)onButtonClick:(UIButton*)sender{
+-(void)onButtonClick:(TypeButton*)sender{
     
     [Utils delaySelectorWithObject:sender WithInterval:1];
     
-    [Animation tapAnimation:self withContext:mContext];
+    [Animation tapAnimation:self];
     
-    [self.delegate onButtonClickListner:sender];
+    [self.delegate onButtonClickListener:self withTitle:button];
 }
 
 @end

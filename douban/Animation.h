@@ -10,7 +10,10 @@
 #import <UIKit/UIKit.h>
 
 @interface Animation : NSObject
-+(void)tapAnimation:(UIView*)object withContext:(UIViewController*)context;
-+(void)objectShowAnimation:(UIView*)object;
++(void)tapAnimation:(UIView*)object;
++(void)objectShowAnimation:(UIView*)object WithDuration:(Float32)time;
 +(void)inputErrorAnimation:(UIView*)object;
++(void)tapOnSearchSuccessAnimationWithObject:(UIView*)object andTitle:(UIButton*)title
+                                   withBlock:(void (^)())block;
++(void)showTipsError;
 @end
