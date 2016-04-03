@@ -15,7 +15,8 @@
 
 +(void)delaySelectorWithObject:(UIView*)object WithInterval:(int)time;
 
-+(void)syncNsurlConnectionWithUrl:(NSString*)url onSuccess:(void(^)(NSDictionary * _Nullable data))successBlock
++(void)syncNsurlConnectionWithUrl:(NSString*)url onSuccess:(void(^)(NSDictionary * data))successBlock
                           onError:(void(^)(NSError *error))errorBlock;
++(void)loadImage:(UIImageView*)imageView WithUrl:(NSString*)url;
 
 @end

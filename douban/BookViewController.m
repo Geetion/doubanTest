@@ -105,10 +105,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     BookItems *item =  dataList[indexPath.item];
+    
     UILabel *title = [cell viewWithTag:1];
     UILabel *author = [cell viewWithTag:2];
+    UIImageView *imageView = [cell viewWithTag:3];
     title.text = item.title;
     author.text = item.author;
+    NSLog(@"%@",item.image);
+    [Utils loadImage:imageView WithUrl:item.image];
+    
     return cell;
 }
 

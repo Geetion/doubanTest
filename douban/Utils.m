@@ -78,6 +78,20 @@ UIView *mObject;
     
     [task resume];
 }
-@end
 
++(void)loadImage:(UIImageView*)imageView WithUrl:(NSString*)url{
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *nsurl = [[NSURL alloc] initWithString:url];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:nsurl];
+    
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:data];
+        imageView.image = image;
+    }];
+    
+    [task resume];
+    
+}
+
+@end
 
