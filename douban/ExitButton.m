@@ -21,12 +21,11 @@ UILabel *title;
         
         self.userInteractionEnabled = true;
         
-        title = [[UILabel alloc]initWithFrame:frame];
+        title = [[UILabel alloc]initWithFrame:self.bounds];
         
         UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onButtonClickListener:) ];
         [self addGestureRecognizer:tap];
         title.textColor = [UIColor whiteColor];
-        
         [self addSubview:title];
         
     }
@@ -37,15 +36,13 @@ UILabel *title;
     
     self.backgroundColor = color;
     
-    title.textAlignment = NSTextAlignmentLeft;
+    title.textAlignment = alignment;
     
     title.text = text;
     
 }
 
 -(void)onButtonClickListener:(UITapGestureRecognizer*)sender{
-    
-    [Animation tapOnExitButton:sender.view];
     
     [_delegate onButtonClickListener:sender.view];
     

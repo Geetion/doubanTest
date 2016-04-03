@@ -29,6 +29,5 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 
-
 @end
 

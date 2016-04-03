@@ -12,10 +12,11 @@
 #import "MusicItems.h"
 #import "ExitButton.h"
 #import "BookDetailViewViewController.h"
+#import "Animation.h"
 
 @interface BookViewController : UITableViewController<ExitButtonDelegate>{
-//    NSMutableArray *dataList;
     NSDictionary *typeDic;
+    ExitButton *dismiss;
 }
 @property (nullable, nonatomic, retain) NSString *url;
 @property (nullable, nonatomic, retain) NSString *searchType;

@@ -15,9 +15,9 @@
     self.author = [Utils convertArrayToString:item[@"author"]];
     self.title = item[@"title"];
     self.image = item[@"image"];
-    self.url = item[@"url"];
     self.isbn13 = item[@"isbn13"];
-    self.publisher = item[@"publisher"];
     self.summary = item[@"summary"];
 }
+
+
 @end

@@ -15,8 +15,6 @@
 @property (nullable, nonatomic, retain) NSString *author;
 @property (nullable, nonatomic, retain) NSString *title;
 @property (nullable, nonatomic, retain) NSString *image;
-@property (nullable, nonatomic, retain) NSString *publisher;
-@property (nullable, nonatomic, retain) NSString *url;
 @property (nullable, nonatomic, retain) NSString *summary;
 @property (nullable, nonatomic, retain) NSString *isbn13;
 

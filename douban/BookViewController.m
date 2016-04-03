@@ -18,24 +18,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIView *window = [UIApplication sharedApplication].keyWindow;
-    
-    CGRect dismissFrame = CGRectMake(200, 200, 50, 50);
-    ExitButton *dismiss = [[ExitButton alloc] initWithFrame:dismissFrame];
-    dismiss.delegate = self;
-    [dismiss setButtonColor:[UIColor blueColor] withAlignment:NSTextAlignmentLeft withText:@"返回"];
-    
-    [window addSubview:dismiss];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
+    UIView *window = [UIApplication sharedApplication].keyWindow;
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    
+    CGRect dismissFrame = CGRectMake(width-80, 450, 80, 50);
+    dismiss = [[ExitButton alloc] initWithFrame:dismissFrame];
+    dismiss.delegate = self;
+    UIColor *color = [UIColor colorWithRed:0.94 green:0.50 blue:0.31 alpha:1.00];
+    [dismiss setButtonColor:color withAlignment:NSTextAlignmentCenter withText:@"返回"];
+    
+    [window addSubview:dismiss];
+    
+    [Animation changeExitButton:dismiss isShow:TRUE];
+}
+
+-(void)removeButton{
+        [dismiss removeFromSuperview];
 }
 
 
 -(void)onButtonClickListener:(UIView*)sender{
-    [self dismissViewControllerAnimated:true completion:nil];
+    [Animation changeExitButton:dismiss isShow:false];
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(removeButton) userInfo:nil repeats:false];
+    [self dismissViewControllerAnimated:true completion:nil];;
 }
 
 #pragma mark - Table view data source

@@ -15,5 +15,4 @@
 @property (nullable, nonatomic, retain) NSString *image;
 @property (nullable, nonatomic, retain) NSArray *genres;
 @property (nullable, nonatomic, retain) NSString *title;
-@property (nullable, nonatomic, retain) NSString *rating;
 @end

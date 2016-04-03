@@ -207,9 +207,9 @@
 				C0925C2C1CAFA6E9002CBB80 /* ViewController.m */,
 				C0925C5B1CAFB94F002CBB80 /* BookViewController.h */,
 				C0925C5C1CAFB94F002CBB80 /* BookViewController.m */,
+				C082C9931CB118FA00081F76 /* BookDetailViewViewController.h */,
 				C07474111CB0B960007098F1 /* MovieViewController.h */,
 				C07474121CB0B960007098F1 /* MovieViewController.m */,
-				C082C9931CB118FA00081F76 /* BookDetailViewViewController.h */,
 				C082C9941CB118FA00081F76 /* BookDetailViewViewController.m */,
 			);
 			name = ViewControllers;

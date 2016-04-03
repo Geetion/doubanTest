@@ -19,14 +19,24 @@
     self.bookTitle.text = _item.title;
     _isbn.text = _item.isbn13;
     _author.text = _item.author;
-    NSLog(@"%@",_item.image);
     [Utils loadImage:_bookImage WithUrl:_item.image];
+    _summary.text = _item.summary;
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    
+    CGRect dismissFrame = CGRectMake(width-80, 450, 80, 50);
+    ExitButton *dismiss = [[ExitButton alloc] initWithFrame:dismissFrame];
+    dismiss.delegate = self;
+    UIColor *color = [UIColor colorWithRed:0.94 green:0.50 blue:0.31 alpha:1.00];
+    [dismiss setButtonColor:color withAlignment:NSTextAlignmentCenter withText:@"返回"];
+    
+    [self.view addSubview:dismiss];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)onButtonClickListener:(UIView*)sender{
+    [self dismissViewControllerAnimated:true completion:nil];
+    [sender removeFromSuperview];
 }
 
 @end

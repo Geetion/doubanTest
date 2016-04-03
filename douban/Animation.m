@@ -87,8 +87,16 @@
     tipsText.textColor = [UIColor whiteColor];
     [background addSubview:tipsText];
     
+    UIImage *errorImg = [UIImage imageNamed:@"error"];
+    
+    UIImageView *error = [[UIImageView alloc]initWithImage:errorImg];
+    error.frame = CGRectMake(165, 10, 20, 20);
+    error.contentMode = UIViewContentModeScaleAspectFit;
+    [background insertSubview:error aboveSubview:tipsText];
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1];
+    [self errorImageAnimation:error];
     background.center = CGPointMake(center_X, 90);
     background.alpha = 1;
     [UIView setAnimationDelay:1];
@@ -96,12 +104,29 @@
     [UIView commitAnimations];
 }
 
-+(void)tapOnExitButton:(UIView*)button{
++(void)changeExitButton:(UIView*)button isShow:(Boolean)isShow{
+    if (isShow) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0];
+        button.transform = CGAffineTransformTranslate(button.transform, 100, 0);
+        [UIView setAnimationDuration:0.5];
+        button.transform = CGAffineTransformTranslate(button.transform, -100, 0);
+        [UIView commitAnimations];
+    }else{
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        button.transform = CGAffineTransformTranslate(button.transform, 100, 0);
+        [UIView commitAnimations];
+    }
+}
+
++(void)errorImageAnimation:(UIImageView*)image{
     [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0];
+    image.transform = CGAffineTransformMakeScale(0, 0);
     [UIView setAnimationDuration:0.5];
-    button.transform = CGAffineTransformTranslate(button.transform, -5, 0);
-    [UIView setAnimationDelay:0.5];
-    button.transform = CGAffineTransformTranslate(button.transform, 5, 0);
+    image.transform = CGAffineTransformMakeScale(1, 1);
+    image.transform = CGAffineTransformMakeRotation(180 *M_PI / 180.0);
     [UIView commitAnimations];
 }
 

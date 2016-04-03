@@ -17,5 +17,6 @@
 +(void)tapOnSearchSuccessAnimationWithObject:(UIView*)object andTitle:(UIButton*)title
                                    withBlock:(void (^)())block;
 +(void)showTipsError:(NSString*)tips;
-+(void)tapOnExitButton:(UIView*)button;
++(void)changeExitButton:(UIView*)button isShow:(Boolean)isShow;
++(void)errorImageAnimation:(UIImageView*)image;
 @end
