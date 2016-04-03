@@ -17,75 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    typeDic = @{@"book":@"books",@"movie":@"subjects",@"music":@"musics"};
-    dataList = [[NSMutableArray alloc] init];
+    
+    UIView *window = [UIApplication sharedApplication].keyWindow;
     
     CGRect dismissFrame = CGRectMake(200, 200, 50, 50);
-    TypeButton *dismiss = [[TypeButton alloc] initWithFrame:dismissFrame];
-    dismiss.buttonColor = [UIColor redColor];
+    ExitButton *dismiss = [[ExitButton alloc] initWithFrame:dismissFrame];
     dismiss.delegate = self;
-    [dismiss setButtonName:@"返回" withTag:1 andContext:self];
+    [dismiss setButtonColor:[UIColor blueColor] withAlignment:NSTextAlignmentLeft withText:@"返回"];
     
-    [self.view addSubview:dismiss];
+    [window addSubview:dismiss];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    [self getBookSearchResult];
 }
 
-/*
- 获取从服务器传回的数据
- @param:keyword 传入关键字
- */
--(void)getBookSearchResult{
-    
-    //    创建网络请求
-    
-    [Utils syncNsurlConnectionWithUrl:_url onSuccess:^(NSDictionary *data) {
-        
-        NSString *resultKeyword = typeDic[_searchType];
-        
-        NSArray *result = [data valueForKey:resultKeyword];
-        
-        for (int i=0; i<result.count; i++) {
-            
-            Items *item = [self getItemType:_searchType];
-            [item initWithObject:result[i]];
-            
-            [dataList addObject:item];
-        }
-        
-        [self.tableView reloadData];
-        NSLog(@"%lu",(unsigned long)result.count);
-        
-        
-    } onError:^(NSError *error) {
-    }];
-}
 
-/*获取Item的类型并返回正确Model
- @param:type 类型关键字
- */
--(Items*)getItemType:(NSString*)type{
-    
-    Items *item;
-    
-    if ([type isEqualToString:@"music"]) {
-        item = [MusicItems alloc];
-        
-    }else if([type isEqualToString:@"movie"]){
-        item = [MovieItems alloc];
-        
-    }else if([type isEqualToString:@"book"]){
-        item = [BookItems alloc];
-    }
-    
-    return item;
-}
-
--(void)onButtonClickListener:(UIView*)sender withTitle:(UIButton*)title{
+-(void)onButtonClickListener:(UIView*)sender{
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
@@ -96,7 +45,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return dataList.count;
+    return _dataList.count;
 
 }
 
@@ -104,17 +53,28 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    BookItems *item =  dataList[indexPath.item];
+    BookItems *item =  _dataList[indexPath.item];
     
     UILabel *title = [cell viewWithTag:1];
     UILabel *author = [cell viewWithTag:2];
     UIImageView *imageView = [cell viewWithTag:3];
+    
     title.text = item.title;
     author.text = item.author;
-    NSLog(@"%@",item.image);
     [Utils loadImage:imageView WithUrl:item.image];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookDetailViewViewController *viewcontroller = [myStoryBoard instantiateViewControllerWithIdentifier:@"bookdetail"];
+    
+    viewcontroller.item = _dataList[indexPath.item];
+    [self presentViewController:viewcontroller animated:true completion:nil];
+    
 }
 
 @end

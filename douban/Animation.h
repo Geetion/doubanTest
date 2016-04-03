@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ExitButton.h"
 
 @interface Animation : NSObject
 +(void)tapAnimation:(UIView*)object;
@@ -15,5 +16,6 @@
 +(void)inputErrorAnimation:(UIView*)object;
 +(void)tapOnSearchSuccessAnimationWithObject:(UIView*)object andTitle:(UIButton*)title
                                    withBlock:(void (^)())block;
-+(void)showTipsError;
++(void)showTipsError:(NSString*)tips;
++(void)tapOnExitButton:(UIView*)button;
 @end

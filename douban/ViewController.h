@@ -18,7 +18,9 @@
     
     NSString *mURL;
     
-    NSDictionary *typeWithTag;
+    NSDictionary *typeDic;
+    
+    NSMutableArray *dataList;
     
     TypeButton *bookSearchbt;
     TypeButton *movieSearchbt;

@@ -63,7 +63,7 @@
     [UIView commitAnimations];
 }
 
-+(void)showTipsError{
++(void)showTipsError:(NSString*)tips{
     
     CGFloat center_X = [UIScreen mainScreen].bounds.size.width/2;
     //获取屏幕窗口
@@ -83,7 +83,7 @@
     tipsText.center = CGPointMake(background.frame.size.width/2, background.frame.size.height/2);
     tipsText.textAlignment = NSTextAlignmentCenter;
     tipsText.font = [UIFont systemFontOfSize:15];
-    tipsText.text = @"请输入搜索内容";
+    tipsText.text = tips;
     tipsText.textColor = [UIColor whiteColor];
     [background addSubview:tipsText];
     
@@ -93,6 +93,15 @@
     background.alpha = 1;
     [UIView setAnimationDelay:1];
     background.alpha = 0;
+    [UIView commitAnimations];
+}
+
++(void)tapOnExitButton:(UIView*)button{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    button.transform = CGAffineTransformTranslate(button.transform, -5, 0);
+    [UIView setAnimationDelay:0.5];
+    button.transform = CGAffineTransformTranslate(button.transform, 5, 0);
     [UIView commitAnimations];
 }
 

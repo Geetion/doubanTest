@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C07474101CB0263F007098F1 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C074740F1CB0263F007098F1 /* Utils.m */; };
 		C07474131CB0B960007098F1 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C07474121CB0B960007098F1 /* MovieViewController.m */; };
+		C082C9921CB1119100081F76 /* ExitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C082C9911CB1119100081F76 /* ExitButton.m */; };
+		C082C9951CB118FA00081F76 /* BookDetailViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C082C9941CB118FA00081F76 /* BookDetailViewViewController.m */; };
 		C0925C271CAFA6E9002CBB80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925C261CAFA6E9002CBB80 /* main.m */; };
 		C0925C2A1CAFA6E9002CBB80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925C291CAFA6E9002CBB80 /* AppDelegate.m */; };
 		C0925C2D1CAFA6E9002CBB80 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0925C2C1CAFA6E9002CBB80 /* ViewController.m */; };
@@ -51,6 +53,10 @@
 		C074740F1CB0263F007098F1 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		C07474111CB0B960007098F1 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		C07474121CB0B960007098F1 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		C082C9901CB1119100081F76 /* ExitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExitButton.h; sourceTree = "<group>"; };
+		C082C9911CB1119100081F76 /* ExitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExitButton.m; sourceTree = "<group>"; };
+		C082C9931CB118FA00081F76 /* BookDetailViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewViewController.h; sourceTree = "<group>"; };
+		C082C9941CB118FA00081F76 /* BookDetailViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewViewController.m; sourceTree = "<group>"; };
 		C0925C221CAFA6E9002CBB80 /* douban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0925C261CAFA6E9002CBB80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0925C281CAFA6E9002CBB80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,6 +209,8 @@
 				C0925C5C1CAFB94F002CBB80 /* BookViewController.m */,
 				C07474111CB0B960007098F1 /* MovieViewController.h */,
 				C07474121CB0B960007098F1 /* MovieViewController.m */,
+				C082C9931CB118FA00081F76 /* BookDetailViewViewController.h */,
+				C082C9941CB118FA00081F76 /* BookDetailViewViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +234,8 @@
 			children = (
 				C0925C641CAFCE6F002CBB80 /* TypeButton.h */,
 				C0925C651CAFCE6F002CBB80 /* TypeButton.m */,
+				C082C9901CB1119100081F76 /* ExitButton.h */,
+				C082C9911CB1119100081F76 /* ExitButton.m */,
 				C0925CA41CAFDE5E002CBB80 /* Animation.h */,
 				C0925CA51CAFDE5E002CBB80 /* Animation.m */,
 				C074740E1CB0263F007098F1 /* Utils.h */,
@@ -377,12 +387,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0925CB31CAFE535002CBB80 /* Items.m in Sources */,
+				C082C9951CB118FA00081F76 /* BookDetailViewViewController.m in Sources */,
 				C0925C5D1CAFB94F002CBB80 /* BookViewController.m in Sources */,
 				C0925C331CAFA6E9002CBB80 /* douban.xcdatamodeld in Sources */,
 				C07474131CB0B960007098F1 /* MovieViewController.m in Sources */,
 				C07474101CB0263F007098F1 /* Utils.m in Sources */,
 				C0925CBF1CB001E1002CBB80 /* BookItemCell.m in Sources */,
 				C0925C2D1CAFA6E9002CBB80 /* ViewController.m in Sources */,
+				C082C9921CB1119100081F76 /* ExitButton.m in Sources */,
 				C0925C2A1CAFA6E9002CBB80 /* AppDelegate.m in Sources */,
 				C0925C271CAFA6E9002CBB80 /* main.m in Sources */,
 				C0925CAA1CAFE2F3002CBB80 /* MovieItems.m in Sources */,

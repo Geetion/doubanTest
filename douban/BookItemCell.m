@@ -25,7 +25,6 @@
     title.text = _itemData.title;
     UILabel *author = [self viewWithTag:2];
     author.text = _itemData.author;
-    UIImageView *image = [self viewWithTag:3];
 }
 
 @end

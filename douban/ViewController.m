@@ -16,6 +16,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    typeDic = @{@"book":@"books",@"movie":@"subjects",@"music":@"musics"};
+    dataList = [[NSMutableArray alloc] init];
+    
     [self initSearchButton];
     
 }
@@ -54,10 +57,66 @@
     [self.view addSubview:musicSearchbt];
 }
 
+/*
+ 获取从服务器传回的数据
+ @param:keyword 传入关键字
+ */
+-(void)getBookSearchResult:(NSString*)url WithType:(NSString*)searchType{
+    
+    //    创建网络请求
+    
+    [Utils syncNsurlConnectionWithUrl:url onSuccess:^(NSDictionary *data) {
+        
+        NSString *resultKeyword = typeDic[searchType];
+        
+        NSArray *result = [data valueForKey:resultKeyword];
+        
+        for (int i=0; i<result.count; i++) {
+            
+            Items *item = [self getItemType:searchType];
+            [item initWithObject:result[i]];
+            
+            [dataList addObject:item];
+            
+            NSLog(@"%lu",(unsigned long)dataList.count);
+        }
+        
+        UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        BookViewController *viewcontroller = [myStoryBoard instantiateViewControllerWithIdentifier:@"book"];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            viewcontroller.dataList = dataList;
+
+            [self presentViewController:viewcontroller animated:true completion:nil];
+        });
+        
+    } onError:^(NSError *error) {
+    }];
+}
+
+/*获取Item的类型并返回正确Model
+ @param:type 类型关键字
+ */
+-(Items*)getItemType:(NSString*)type{
+    
+    Items *item;
+    
+    if ([type isEqualToString:@"music"]) {
+        item = [MusicItems alloc];
+        
+    }else if([type isEqualToString:@"movie"]){
+        item = [MovieItems alloc];
+        
+    }else if([type isEqualToString:@"book"]){
+        item = [BookItems alloc];
+    }
+    
+    return item;
+}
+
 
 -(void)onButtonClickListener:(UIView*)sender withTitle:(UIButton*)title{
-    
-    [Animation inputErrorAnimation:self.searchField];
     
     NSString *keyword = [self.searchField text];
     
@@ -85,14 +144,10 @@
     getUrl= [getUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     if (keyword.length != 0) {
-        UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        BookViewController *viewcontroller = [myStoryBoard instantiateViewControllerWithIdentifier:@"book"];
-        viewcontroller.url = getUrl;
-        viewcontroller.keyword = keyword;
-        viewcontroller.searchType = type;
-        [self presentViewController:viewcontroller animated:true completion:nil];
+        [self getBookSearchResult:getUrl WithType:type];
     }else{
-        [Animation showTipsError];
+        [Animation inputErrorAnimation:self.searchField];
+        [Animation showTipsError:@"请输入搜索内容"];
     }
 }
 
